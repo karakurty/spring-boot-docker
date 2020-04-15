@@ -108,7 +108,7 @@
 						</image>
                         <!--mysql container-->
 						<image>
-							<name>mysql</name>
+							<name>mysql:5</name>
                             <alias>mysqldb</alias>
 							<run>
                                 <!--expose port for dn-->
@@ -159,7 +159,7 @@
                                     <link>mysqldb:mysqldb</link>
                                 </links>
                                 <env>
-                                    <SPRING_DATASOURCE_URL>jdbc:mysql://mysqldb:3306/pageviewservice</SPRING_DATASOURCE_URL>
+                                    <SPRING_DATASOURCE_URL>jdbc:mysql://mysqldb:3306/pageviewservice?verifyServerCertificate=false&amp;useSSL=false&amp;requireSSL=false</SPRING_DATASOURCE_URL>
                                     <SPRING_PROFILES_ACTIVE>mysql</SPRING_PROFILES_ACTIVE>
                                     <SPRING_RABBITMQ_HOST>rabbitmq</SPRING_RABBITMQ_HOST>
                                 </env>
